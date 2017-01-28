@@ -1,8 +1,9 @@
 # Track
-Short description and motivation.
+Метрики и хранение IP-адресов и агентов пользователя.
 
 ## Usage
-How to use my plugin.
+Используйте на свой страх и риск. Много неописанных зависимостей и в целом 
+нестабильная экспериментальная версия.
 
 ## Installation
 Add this line to your application's Gemfile:
