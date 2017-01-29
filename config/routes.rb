@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   end
 
   namespace :api, defaults: { format: :json } do
-    resources :browsers, :agents, except: [:new, :edit], concerns: [:toggleable, :lockable]
+    resources :browsers, :agents, except: [:new, :edit] do
+      member do
+        post 'toggle'
+        put 'lock'
+        delete 'lock', action: :unlock
+      end
+    end
   end
 
   resources :agents, :browsers, except: [:index, :show]
