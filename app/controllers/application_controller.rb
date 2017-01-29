@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
     Metric.register(metric || Metric::METRIC_HTTP_401)
     render view, status: :unauthorized
   end
+
+  def agent
+    @agent ||= Agent.named(request.user_agent || 'n/a')
+  end
+
+  def tracking_for_entity
+    { agent: agent, ip: request.env['HTTP_X_REAL_IP'] || request.remote_ip }
+  end
 end
