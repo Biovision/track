@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    track (0.1.0)
+    track (0.1.0dev)
       rails (~> 5.0.1)
 
 GEM
