@@ -4,9 +4,10 @@
   <h1><%= @entity.name %></h1>
   <ul class="actions">
     <li><%= back_icon(admin_metrics_path) %></li>
+    <li><%= edit_icon(edit_metric_path(@entity.id)) %></li>
   </ul>
 
   <div><%= @entity.description %></div>
 
-  <%= render partial: 'admin/metrics/entity/values', locals: { values: @entity.metric_values.page_for_administration } %>
+  <%= render partial: 'admin/metrics/entity/values', locals: { metric: @entity, values: @entity.metric_values.page_for_administration } %>
 </article>

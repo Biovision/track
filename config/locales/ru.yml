@@ -91,3 +91,9 @@ ru:
   tracking:
     ip: "IP"
     agent: "АП"
+  metrics:
+    edit:
+      title: "Редактирование метрики"
+      heading: "Редактирование метрики"
+    update:
+      success: "Метрика успешно обновлена"
