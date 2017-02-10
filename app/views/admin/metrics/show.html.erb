@@ -9,5 +9,5 @@
 
   <div><%= @entity.description %></div>
 
-  <%= render partial: 'admin/metrics/entity/values', locals: { metric: @entity, values: @entity.metric_values.page_for_administration } %>
+  <%= render partial: 'admin/metrics/entity/values', locals: { metric: @entity, values: @entity.values(@entity.default_period) } %>
 </article>

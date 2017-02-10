@@ -1,5 +1,5 @@
 <% if values.any? %>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
 
     <canvas id="metric-chart" width="640" height="480"></canvas>
     <script>
@@ -8,10 +8,10 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['<%= values.map { |v| v.time.strftime('%d.%m.%Y %H:%M') }.join("','").html_safe %>'],
+                    labels: ['<%= values.keys.map { |v| v }.join("','").html_safe %>'],
                     datasets: [{
                         label: '<%= metric.name %>',
-                        data: [<%= values.map { |v| v.quantity }.join(',') %>],
+                        data: [<%= values.values.map { |v| v }.join(',') %>],
                         borderWidth: 1
                     }]
                 },
